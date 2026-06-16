@@ -205,7 +205,7 @@ jobs:
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
-        if: ${{ github.event_name != 'release' }}
+        if: always()
         with:
           name: ${{ matrix.target }}-package
           path: ${{ steps.glob.outputs.paths }}
